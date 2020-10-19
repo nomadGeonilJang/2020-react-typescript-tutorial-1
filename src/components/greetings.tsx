@@ -3,12 +3,18 @@ import React from "react";
 type GreetingsProps = {
   name: string;
   mark: string;
+  onClick: (name: string) => void;
+  //   children?: React.ReactNode;
 };
 
-function Greetings({ name, mark }: GreetingsProps) {
+function Greetings({ name, mark, onClick }: GreetingsProps) {
+  function handleClick() {
+    onClick(name);
+  }
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       {name}, {mark}
+      <button onClick={handleClick}>"Click" {mark}</button>
     </div>
   );
 }
