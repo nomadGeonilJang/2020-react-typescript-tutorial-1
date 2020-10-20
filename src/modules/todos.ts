@@ -36,7 +36,13 @@ export type Todo = {
 
 type TodosState = Todo[];
 
-const initialState: TodosState = [];
+const initialState: TodosState = [
+  {
+    id: 0,
+    text: "Hello world",
+    done: true,
+  },
+];
 
 export default function todo(
   state: TodosState = initialState,

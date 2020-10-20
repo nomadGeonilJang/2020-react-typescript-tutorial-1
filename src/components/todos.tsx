@@ -11,29 +11,31 @@ function Item({ todo, onRemoveTodo, onToggleTodo }: ItemProps) {
   const { id, text, done } = todo;
   return (
     <div
+      className={"todo-card"}
       style={{
         backgroundColor: `${done ? "green" : "gray"}`,
         color: "white",
-        width: "200px",
-        height: "300px",
-        overflow: "auto",
       }}
     >
-      <h2>{id}</h2>
+      <h2>
+        <span>{id}</span>
+      </h2>
       <p>{text}</p>
       <button
+        className="delete-button"
         onClick={() => {
           onRemoveTodo(id);
         }}
       >
-        delete
+        ❌
       </button>
       <button
+        className="done-button"
         onClick={() => {
           onToggleTodo(id);
         }}
       >
-        done
+        🔥
       </button>
     </div>
   );
