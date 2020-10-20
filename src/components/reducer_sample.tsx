@@ -88,7 +88,7 @@ function ReducerSample() {
         <button onClick={onSetText(state.count.toString())}>set</button>
       </div>
       <div>
-        <select value={state.count} onChange={onSelect}>
+        <select value={state.color} onChange={onSelect}>
           <option value={"red"}>{"red"}</option>
           <option value={"orange"}>{"orange"}</option>
           <option value={"yellow"}>{"yellow"}</option>
