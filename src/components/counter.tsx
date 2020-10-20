@@ -1,31 +1,24 @@
-import React, { useState, useReducer } from "react";
+import React from "react";
 
-type Action = { type: "INCREASE" } | { type: "DECREASE" };
+type CounterProps = {
+  count: number;
+  onIncrease: () => void;
+  onDecrease: () => void;
+  onIncreaseBy: (diff: number) => void;
+};
 
-function reducer(state: number, action: Action): number {
-  if (action.type === "INCREASE") {
-    return state + 1;
-  }
-  if (action.type === "DECREASE") {
-    if (state) {
-      return state - 1;
-    }
-    return 0;
-  }
-  throw new Error("Unhandled action type");
-}
-
-function Counter() {
-  const [state, dispatch] = useReducer(reducer, 0);
-  const onIncrease = () => dispatch({ type: "INCREASE" });
-  const onDecrease = () => dispatch({ type: "DECREASE" });
+export default function Counter({
+  count,
+  onIncrease,
+  onDecrease,
+  onIncreaseBy,
+}: CounterProps) {
   return (
     <div>
-      <h1>{state}</h1>
+      <h1>{count}</h1>
       <button onClick={onIncrease}>+1</button>
       <button onClick={onDecrease}>-1</button>
+      <button onClick={() => onIncreaseBy(5)}>+5</button>
     </div>
   );
 }
-
-export default Counter;
