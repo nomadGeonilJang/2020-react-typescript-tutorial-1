@@ -75,6 +75,9 @@ const Container = styled.section`
     overflow: auto;
     padding-bottom: 63px;
   }
+  .container::-webkit-scrollbar {
+    display: none;
+  }
 
   ul {
     padding: 0;
