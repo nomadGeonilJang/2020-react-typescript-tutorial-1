@@ -1,6 +1,6 @@
 # Typescript with React
 
-### Install
+### Installation
 
 ```bash
 npx create-react-app [이름] --typescript
