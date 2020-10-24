@@ -3,5 +3,5 @@
 ### Installation
 
 ```bash
-npx create-react-app [이름] --typescript
+npx create-react-app [프로젝트 이름] --typescript
 ```
